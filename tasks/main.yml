@@ -1,0 +1,23 @@
+---
+# tasks file for hswong3i.php_fpm_vhosts
+
+- name: create user
+  user:
+    name={{ php_fpm_vhosts_user }}
+    password={{ php_fpm_vhosts_pass }}
+    home={{ php_fpm_vhosts_home }}
+    shell=/bin/bash
+  notify: restart php_fpm
+  tags: hswong3i.php_fpm_vhosts
+
+- name: copy templates
+  template:
+    src={{ item.src }}
+    dest={{ item.dest }}
+    owner={{ item.owner }}
+    group={{ item.group }}
+    mode={{ item.mode }}
+  with_items:
+    - { src: 'etc/php/7.0/fpm/pool.d/www.conf.j2', dest: "/etc/php/7.0/fpm/pool.d/{{ php_fpm_vhosts_user }}.conf", owner: 'root', group: 'root', mode: '0644' }
+  notify: restart php_fpm
+  tags: hswong3i.php_fpm_vhosts

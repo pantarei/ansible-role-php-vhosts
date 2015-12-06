@@ -1,0 +1,13 @@
+---
+# defaults file for hswong3i.php_fpm_vhosts
+
+php_fpm_vhosts_user: example
+php_fpm_vhosts_pass: uquaeZ6o
+php_fpm_vhosts_home: /home/example
+
+php_fpm_vhosts_max_execution_time: 30
+php_fpm_vhosts_max_input_time: 60
+php_fpm_vhosts_memory_limit: 256M
+php_fpm_vhosts_post_max_size: 32M
+php_fpm_vhosts_upload_max_filesize: 32M
+php_fpm_vhosts_date_timezone: 'Etc/UTC'
