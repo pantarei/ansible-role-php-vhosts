@@ -408,9 +408,19 @@ pm.max_spare_servers = 3
 
 ; Default Value: nothing is defined by default except the values in php.ini and
 ;                specified at startup with the -d argument
+php_admin_value[short_open_tag] = {{ php_fpm_vhosts_short_open_tag }}
 php_admin_value[max_execution_time] = {{ php_fpm_vhosts_max_execution_time }}
 php_admin_value[max_input_time] = {{ php_fpm_vhosts_max_input_time }}
 php_admin_value[memory_limit] = {{ php_fpm_vhosts_memory_limit }}
+php_admin_value[error_reporting] = {{ php_fpm_vhosts_error_reporting }}
+php_admin_value[display_errors] = {{ php_fpm_vhosts_display_errors }}
+php_admin_value[display_startup_errors] = {{ php_fpm_vhosts_display_startup_errors }}
+php_admin_value[log_errors] = {{ php_fpm_vhosts_log_errors }}
+php_admin_value[ignore_repeated_errors] = {{ php_fpm_vhosts_ignore_repeated_errors }}
+php_admin_value[ignore_repeated_source] = {{ php_fpm_vhosts_ignore_repeated_source }}
+php_admin_value[report_memleaks] = {{ php_fpm_vhosts_report_memleaks }}
+php_admin_value[track_errors] = {{ php_fpm_vhosts_track_errors }}
+php_admin_value[html_errors] = {{ php_fpm_vhosts_html_errors }}
 php_admin_value[post_max_size] = {{ php_fpm_vhosts_post_max_size }}
 php_admin_value[upload_max_filesize] = {{ php_fpm_vhosts_upload_max_filesize }}
 php_admin_value[date.timezone] = {{ php_fpm_vhosts_date_timezone }}
