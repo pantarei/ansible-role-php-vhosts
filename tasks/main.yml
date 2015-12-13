@@ -10,6 +10,19 @@
   notify: restart php_fpm
   tags: hswong3i.php_fpm_vhosts
 
+- name: prepare file
+  file:
+    path={{ item.path }}
+    owner={{ item.owner }}
+    group={{ item.group }}
+    mode={{ item.mode }}
+    state={{ item.state }}
+  with_items:
+  - { path: "{{ php_fpm_vhosts_session_save_path }}", owner: "{{ php_fpm_vhosts_user }}", group: "{{ php_fpm_vhosts_user }}", mode: '0755', state: 'directory' }
+  - { path: "{{ php_fpm_vhosts_upload_tmp_dir }}", owner: "{{ php_fpm_vhosts_user }}", group: "{{ php_fpm_vhosts_user }}", mode: '0755', state: 'directory' }
+  notify: restart php_fpm
+  tags: hswong3i.php_fpm_vhosts
+
 - name: copy templates
   template:
     src={{ item.src }}
