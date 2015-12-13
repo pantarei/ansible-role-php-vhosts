@@ -19,5 +19,7 @@ php_fpm_vhosts_report_memleaks: 'On'
 php_fpm_vhosts_track_errors: 'Off'
 php_fpm_vhosts_html_errors: 'On'
 php_fpm_vhosts_post_max_size: 32M
+php_fpm_vhosts_upload_tmp_dir: "{{ php_fpm_vhosts_home }}/tmp"
 php_fpm_vhosts_upload_max_filesize: 32M
 php_fpm_vhosts_date_timezone: 'Etc/UTC'
+php_fpm_vhosts_session_save_path: "{{ php_fpm_vhosts_home }}/tmp"
