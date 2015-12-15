@@ -2,7 +2,7 @@
 # defaults file for hswong3i.php_fpm_vhosts
 
 php_fpm_vhosts_user: example
-php_fpm_vhosts_pass: uquaeZ6o
+php_fpm_vhosts_pass: "{{ 'uquaeZ6o' | password_hash('sha512', 'uquaeZ6o') }}"
 php_fpm_vhosts_home: /home/example
 
 php_fpm_vhosts_short_open_tag: 'Off'
