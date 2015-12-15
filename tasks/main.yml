@@ -4,7 +4,7 @@
 - name: create user
   user:
     name={{ php_fpm_vhosts_user }}
-    password={{ php_fpm_vhosts_pass }}
+    password={{ php_fpm_vhosts_pass | password_hash('sha512', php_fpm_vhosts_hash_salt) }}
     home={{ php_fpm_vhosts_home }}
     shell=/bin/bash
   notify: restart php_fpm
