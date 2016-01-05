@@ -196,7 +196,7 @@ Role Variables
 Dependencies
 ------------
 
--   [hswong3i.php\_fpm](https://github.com/pantarei/ansible-role-php-fpm)
+No additional role dependencies.
 
 Example Playbook
 ----------------
