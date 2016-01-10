@@ -1,6 +1,5 @@
 ---
-# roles file for hswong3i.php_fpm_vhosts
+# roles file for hswong3i.php_vhosts
 
 - src: hswong3i.php
-- src: hswong3i.php_fpm
-- src: hswong3i.php_fpm_vhosts
+- src: hswong3i.php_vhosts

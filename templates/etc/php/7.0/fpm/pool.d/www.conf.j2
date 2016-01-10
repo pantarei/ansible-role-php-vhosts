@@ -3,7 +3,7 @@
 ; Start a new pool named 'www'.
 ; the variable $pool can we used in any directive and will be replaced by the
 ; pool name ('www' here)
-[{{ php_fpm_vhosts_user }}]
+[{{ php_vhosts_user }}]
 
 ; Per pool prefix
 ; It only applies on the following directives:
@@ -22,8 +22,8 @@
 ; Unix user/group of processes
 ; Note: The user is mandatory. If the group is not set, the default user's group
 ;       will be used.
-user = {{ php_fpm_vhosts_user }}
-group = {{ php_fpm_vhosts_user }}
+user = {{ php_vhosts_user }}
+group = {{ php_vhosts_user }}
 
 ; The address on which to accept FastCGI requests.
 ; Valid syntaxes are:
@@ -35,7 +35,7 @@ group = {{ php_fpm_vhosts_user }}
 ;                            (IPv6 and IPv4-mapped) on a specific port;
 ;   '/path/to/unix/socket' - to listen on a unix socket.
 ; Note: This value is mandatory.
-listen = /run/php/{{ php_fpm_vhosts_user }}.sock
+listen = /run/php/{{ php_vhosts_user }}.sock
 
 ; Set listen(2) backlog.
 ; Default Value: 511 (-1 on FreeBSD and OpenBSD)
@@ -408,21 +408,21 @@ pm.max_spare_servers = 3
 
 ; Default Value: nothing is defined by default except the values in php.ini and
 ;                specified at startup with the -d argument
-php_admin_value[short_open_tag] = {{ php_fpm_vhosts_short_open_tag }}
-php_admin_value[max_execution_time] = {{ php_fpm_vhosts_max_execution_time }}
-php_admin_value[max_input_time] = {{ php_fpm_vhosts_max_input_time }}
-php_admin_value[memory_limit] = {{ php_fpm_vhosts_memory_limit }}
-php_admin_value[error_reporting] = {{ php_fpm_vhosts_error_reporting }}
-php_admin_value[display_errors] = {{ php_fpm_vhosts_display_errors }}
-php_admin_value[display_startup_errors] = {{ php_fpm_vhosts_display_startup_errors }}
-php_admin_value[log_errors] = {{ php_fpm_vhosts_log_errors }}
-php_admin_value[ignore_repeated_errors] = {{ php_fpm_vhosts_ignore_repeated_errors }}
-php_admin_value[ignore_repeated_source] = {{ php_fpm_vhosts_ignore_repeated_source }}
-php_admin_value[report_memleaks] = {{ php_fpm_vhosts_report_memleaks }}
-php_admin_value[track_errors] = {{ php_fpm_vhosts_track_errors }}
-php_admin_value[html_errors] = {{ php_fpm_vhosts_html_errors }}
-php_admin_value[post_max_size] = {{ php_fpm_vhosts_post_max_size }}
-php_admin_value[upload_tmp_dir] = {{ php_fpm_vhosts_upload_tmp_dir }}
-php_admin_value[upload_max_filesize] = {{ php_fpm_vhosts_upload_max_filesize }}
-php_admin_value[date.timezone] = {{ php_fpm_vhosts_date_timezone }}
-php_admin_value[session.save_path] = {{ php_fpm_vhosts_session_save_path }}
+php_admin_value[short_open_tag] = {{ php_vhosts_short_open_tag }}
+php_admin_value[max_execution_time] = {{ php_vhosts_max_execution_time }}
+php_admin_value[max_input_time] = {{ php_vhosts_max_input_time }}
+php_admin_value[memory_limit] = {{ php_vhosts_memory_limit }}
+php_admin_value[error_reporting] = {{ php_vhosts_error_reporting }}
+php_admin_value[display_errors] = {{ php_vhosts_display_errors }}
+php_admin_value[display_startup_errors] = {{ php_vhosts_display_startup_errors }}
+php_admin_value[log_errors] = {{ php_vhosts_log_errors }}
+php_admin_value[ignore_repeated_errors] = {{ php_vhosts_ignore_repeated_errors }}
+php_admin_value[ignore_repeated_source] = {{ php_vhosts_ignore_repeated_source }}
+php_admin_value[report_memleaks] = {{ php_vhosts_report_memleaks }}
+php_admin_value[track_errors] = {{ php_vhosts_track_errors }}
+php_admin_value[html_errors] = {{ php_vhosts_html_errors }}
+php_admin_value[post_max_size] = {{ php_vhosts_post_max_size }}
+php_admin_value[upload_tmp_dir] = {{ php_vhosts_upload_tmp_dir }}
+php_admin_value[upload_max_filesize] = {{ php_vhosts_upload_max_filesize }}
+php_admin_value[date.timezone] = {{ php_vhosts_date_timezone }}
+php_admin_value[session.save_path] = {{ php_vhosts_session_save_path }}

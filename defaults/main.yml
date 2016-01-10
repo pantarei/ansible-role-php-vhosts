@@ -1,26 +1,26 @@
 ---
-# defaults file for hswong3i.php_fpm_vhosts
+# defaults file for hswong3i.php_vhosts
 
-php_fpm_vhosts_user: example
-php_fpm_vhosts_pass: uquaeZ6o
-php_fpm_vhosts_hash_salt: 99c1d7b7a9dc4e767d97f9fdfdbe8dcaf32cdb4e039ae341b06834d39129d56c
-php_fpm_vhosts_home: /home/example
+php_vhosts_user: example
+php_vhosts_pass: uquaeZ6o
+php_vhosts_hash_salt: 99c1d7b7a9dc4e767d97f9fdfdbe8dcaf32cdb4e039ae341b06834d39129d56c
+php_vhosts_home: /home/example
 
-php_fpm_vhosts_short_open_tag: 'Off'
-php_fpm_vhosts_max_execution_time: 30
-php_fpm_vhosts_max_input_time: 60
-php_fpm_vhosts_memory_limit: 256M
-php_fpm_vhosts_error_reporting: 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
-php_fpm_vhosts_display_errors: 'Off'
-php_fpm_vhosts_display_startup_errors: 'Off'
-php_fpm_vhosts_log_errors: 'On'
-php_fpm_vhosts_ignore_repeated_errors: 'Off'
-php_fpm_vhosts_ignore_repeated_source: 'Off'
-php_fpm_vhosts_report_memleaks: 'On'
-php_fpm_vhosts_track_errors: 'Off'
-php_fpm_vhosts_html_errors: 'On'
-php_fpm_vhosts_post_max_size: 32M
-php_fpm_vhosts_upload_tmp_dir: "{{ php_fpm_vhosts_home }}/tmp"
-php_fpm_vhosts_upload_max_filesize: 32M
-php_fpm_vhosts_date_timezone: 'Etc/UTC'
-php_fpm_vhosts_session_save_path: "{{ php_fpm_vhosts_home }}/tmp"
+php_vhosts_short_open_tag: 'Off'
+php_vhosts_max_execution_time: 30
+php_vhosts_max_input_time: 60
+php_vhosts_memory_limit: 256M
+php_vhosts_error_reporting: 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
+php_vhosts_display_errors: 'Off'
+php_vhosts_display_startup_errors: 'Off'
+php_vhosts_log_errors: 'On'
+php_vhosts_ignore_repeated_errors: 'Off'
+php_vhosts_ignore_repeated_source: 'Off'
+php_vhosts_report_memleaks: 'On'
+php_vhosts_track_errors: 'Off'
+php_vhosts_html_errors: 'On'
+php_vhosts_post_max_size: 32M
+php_vhosts_upload_tmp_dir: "{{ php_vhosts_home }}/tmp"
+php_vhosts_upload_max_filesize: 32M
+php_vhosts_date_timezone: 'Etc/UTC'
+php_vhosts_session_save_path: "{{ php_vhosts_home }}/tmp"
