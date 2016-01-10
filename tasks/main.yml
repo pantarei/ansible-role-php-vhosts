@@ -7,7 +7,7 @@
     password={{ php_vhosts_pass | password_hash('sha512', php_vhosts_hash_salt) }}
     home={{ php_vhosts_home }}
     shell=/bin/bash
-  notify: restart php_fpm
+  notify: restart php
   tags: hswong3i.php_vhosts
 
 - name: prepare file
@@ -20,7 +20,7 @@
   with_items:
   - { path: "{{ php_vhosts_session_save_path }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: '0755', state: 'directory' }
   - { path: "{{ php_vhosts_upload_tmp_dir }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: '0755', state: 'directory' }
-  notify: restart php_fpm
+  notify: restart php
   tags: hswong3i.php_vhosts
 
 - name: copy templates
@@ -32,5 +32,5 @@
     mode={{ item.mode }}
   with_items:
     - { src: 'etc/php/7.0/fpm/pool.d/www.conf.j2', dest: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_user }}.conf", owner: 'root', group: 'root', mode: '0644' }
-  notify: restart php_fpm
+  notify: restart php
   tags: hswong3i.php_vhosts
