@@ -3,7 +3,7 @@
 ; Start a new pool named 'www'.
 ; the variable $pool can we used in any directive and will be replaced by the
 ; pool name ('www' here)
-[{{ php_vhosts_user }}]
+[{{ php_vhosts_id }}]
 
 ; Per pool prefix
 ; It only applies on the following directives:
@@ -35,7 +35,7 @@ group = {{ php_vhosts_user }}
 ;                            (IPv6 and IPv4-mapped) on a specific port;
 ;   '/path/to/unix/socket' - to listen on a unix socket.
 ; Note: This value is mandatory.
-listen = /run/php/{{ php_vhosts_user }}.sock
+listen = /run/php/{{ php_vhosts_id }}.sock
 
 ; Set listen(2) backlog.
 ; Default Value: 511 (-1 on FreeBSD and OpenBSD)
