@@ -53,7 +53,7 @@ Role Variables
 <tr class="odd">
 <td align="left">php_vhosts_pass</td>
 <td align="left">yes</td>
-<td align="left">uquaeZ6o</td>
+<td align="left">xaivoo9Z</td>
 <td align="left"></td>
 <td align="left">Password for virtual host user.</td>
 </tr>
