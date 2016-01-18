@@ -1,6 +1,7 @@
 ---
 # defaults file for hswong3i.php_vhosts
 
+php_vhosts_id: example
 php_vhosts_user: example
 php_vhosts_pass: uquaeZ6o
 php_vhosts_hash_salt: 99c1d7b7a9dc4e767d97f9fdfdbe8dcaf32cdb4e039ae341b06834d39129d56c
