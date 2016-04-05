@@ -6,6 +6,8 @@ php_vhosts_user: example
 php_vhosts_pass: xaivoo9Z
 php_vhosts_hash_salt: wi6Eereiwae7phae
 php_vhosts_home: /home/example
+php_vhosts_uid: ~
+php_vhosts_gid: ~
 
 php_vhosts_short_open_tag: 'Off'
 php_vhosts_max_execution_time: 30
