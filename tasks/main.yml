@@ -14,7 +14,7 @@
     password: "{{ php_vhosts_pass | password_hash('sha512', php_vhosts_hash_salt) }}"
     home: "{{ php_vhosts_home }}"
     group: "{{ php_vhosts_user }}"
-    uid: "{{ php_vhosts_uid }}"
+    uid: "{{ php_vhosts_uid | default(None) or omit }}"
     shell: "/bin/bash"
   notify: restart php
   tags: hswong3i.php_vhosts
