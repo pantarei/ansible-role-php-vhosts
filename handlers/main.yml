@@ -3,8 +3,8 @@
 
 - name: restart php
   service: 
-    name: {{ item.name }}
-    state: {{ item.state }}
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
   with_items:
     - { name: php5.6-fpm, state: "restarted" }
     - { name: php7.0-fpm, state: "restarted" }
