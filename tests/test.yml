@@ -5,4 +5,8 @@
   remote_user: root
   roles:
     - hswong3i.php
-    - ansible-role-php-vhosts
+    - role: ansible-role-php-vhosts
+      php_vhosts_hash_salt: "wi6Eereiwae7phae"
+      php_vhosts_id: "example"
+      php_vhosts_pass: "xaivoo9Z"
+      php_vhosts_user: "example"
