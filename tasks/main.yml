@@ -52,9 +52,11 @@
   file:
     src: "{{ item.src }}"
     path: "{{ item.path }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
     state: "{{ item.state }}"
   with_items:
-  - { src: "/etc/php/5.6/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_document_root }}/../etc/php/5.6/php.ini",  state: "link" }
-  - { src: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_document_root }}/../etc/php/7.0/php.ini",  state: "link" }
+  - { src: "/etc/php/5.6/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_document_root }}/../etc/php/5.6/php.ini",  owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", state: "link" }
+  - { src: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_document_root }}/../etc/php/7.0/php.ini",  owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", state: "link" }
   notify: restart php
   tags: hswong3i.php_vhosts
