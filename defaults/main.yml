@@ -9,12 +9,15 @@ php_vhosts_pass: ~
 php_vhosts_uid: ~
 php_vhosts_user: ~
 
+# document root related
+php_vhosts_document_root: "{{ php_vhosts_home }}/public_html"
+php_vhosts_home: "/home/{{ php_vhosts_user }}"
+
 # optional variables with default
 php_vhosts_date_timezone: "Etc/UTC"
 php_vhosts_display_errors: "Off"
 php_vhosts_display_startup_errors: "Off"
 php_vhosts_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
-php_vhosts_home: "/home/{{ php_vhosts_user }}"
 php_vhosts_html_errors: "On"
 php_vhosts_ignore_repeated_errors: "Off"
 php_vhosts_ignore_repeated_source: "Off"
@@ -24,8 +27,8 @@ php_vhosts_max_input_time: "60"
 php_vhosts_memory_limit: "256M"
 php_vhosts_post_max_size: "32M"
 php_vhosts_report_memleaks: "On"
-php_vhosts_session_save_path: "{{ php_vhosts_home }}/tmp"
+php_vhosts_session_save_path: "{{ php_vhosts_document_root }}/../tmp"
 php_vhosts_short_open_tag: "Off"
 php_vhosts_track_errors: "Off"
 php_vhosts_upload_max_filesize: "32M"
-php_vhosts_upload_tmp_dir: "{{ php_vhosts_home }}/tmp"
+php_vhosts_upload_tmp_dir: "{{ php_vhosts_document_root }}/../tmp"
