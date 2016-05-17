@@ -4,7 +4,6 @@ Ansible Role for PHP VirtualHost
 [![Build Status](https://travis-ci.org/pantarei/ansible-role-php-vhosts.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-php-vhosts)
 [![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-php-vhosts.svg)](https://github.com/pantarei/ansible-role-php-vhosts)
 [![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-php-vhosts.svg)](https://github.com/pantarei/ansible-role-php-vhosts/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/ansible/role/6943.svg)](https://galaxy.ansible.com/detail#/role/6943)
 
 Ansible Role for PHP VirtualHost Management.
 
