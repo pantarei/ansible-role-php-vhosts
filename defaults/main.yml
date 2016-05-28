@@ -10,7 +10,8 @@ php_vhosts_uid: ~
 php_vhosts_user: ~
 
 # document root related
-php_vhosts_document_root: "{{ php_vhosts_home }}/public_html"
+php_vhosts_base: "{{ php_vhosts_home }}"
+php_vhosts_document_root: "{{ php_vhosts_base }}/public_html"
 php_vhosts_home: "/home/{{ php_vhosts_user }}"
 
 # optional variables with default
@@ -27,8 +28,8 @@ php_vhosts_max_input_time: "60"
 php_vhosts_memory_limit: "256M"
 php_vhosts_post_max_size: "32M"
 php_vhosts_report_memleaks: "On"
-php_vhosts_session_save_path: "{{ php_vhosts_document_root }}/../tmp"
+php_vhosts_session_save_path: "{{ php_vhosts_base }}/tmp"
 php_vhosts_short_open_tag: "Off"
 php_vhosts_track_errors: "Off"
 php_vhosts_upload_max_filesize: "32M"
-php_vhosts_upload_tmp_dir: "{{ php_vhosts_document_root }}/../tmp"
+php_vhosts_upload_tmp_dir: "{{ php_vhosts_base }}/tmp"
