@@ -4,5 +4,6 @@
 - hosts: localhost
   remote_user: root
   roles:
+    - hswong3i.apt
     - hswong3i.php
     - ansible-role-php-vhosts

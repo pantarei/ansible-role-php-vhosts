@@ -13,6 +13,7 @@ before_install:
   - sudo apt-get -y install ansible
 
 install:
+  - git clone https://github.com/pantarei/ansible-role-apt.git ../hswong3i.apt
   - git clone https://github.com/pantarei/ansible-role-php.git ../hswong3i.php
 
 script:
