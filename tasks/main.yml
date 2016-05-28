@@ -30,7 +30,6 @@
   - { path: "{{ php_vhosts_base }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
   - { path: "{{ php_vhosts_base }}/etc/php/5.6", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
   - { path: "{{ php_vhosts_base }}/etc/php/7.0", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
-  - { path: "{{ php_vhosts_document_root }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
   - { path: "{{ php_vhosts_session_save_path }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
   - { path: "{{ php_vhosts_upload_tmp_dir }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
   notify: restart php
