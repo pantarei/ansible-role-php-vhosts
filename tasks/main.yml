@@ -5,6 +5,7 @@
   group:
     name: "{{ php_vhosts_user }}"
     gid: "{{ php_vhosts_gid | default(None) or omit }}"
+  when: php_vhosts_pass is string and php_vhosts_hash_salt is string
   notify: restart php
   tags: hswong3i.php_vhosts
 
@@ -16,6 +17,7 @@
     group: "{{ php_vhosts_user }}"
     uid: "{{ php_vhosts_uid | default(None) or omit }}"
     shell: "/bin/bash"
+  when: php_vhosts_pass is string and php_vhosts_hash_salt is string
   notify: restart php
   tags: hswong3i.php_vhosts
 
