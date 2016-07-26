@@ -1,6 +1,10 @@
 ---
 # tasks file for hswong3i.php_vhosts
 
+- name: include release specific variables
+  include_vars: "{{ ansible_distribution_release }}.yml"
+  tags: hswong3i.php_vhosts
+
 - name: create group
   group:
     name: "{{ php_vhosts_user }}"
@@ -28,12 +32,7 @@
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
     state: "{{ item.state }}"
-  with_items:
-  - { path: "{{ php_vhosts_base }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
-  - { path: "{{ php_vhosts_base }}/etc/php/5.6", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
-  - { path: "{{ php_vhosts_base }}/etc/php/7.0", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
-  - { path: "{{ php_vhosts_session_save_path }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
-  - { path: "{{ php_vhosts_upload_tmp_dir }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" }
+  with_items: "{{ _php_vhosts_directory }}"
   notify: restart php
   tags: hswong3i.php_vhosts
 
@@ -44,9 +43,7 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
-  with_items:
-    - { src: "etc/php/5.6/fpm/pool.d/www.conf.j2", dest: "/etc/php/5.6/fpm/pool.d/{{ php_vhosts_id }}.conf", owner: "{{ php_vhosts_user }}", group: "www-data", mode: "0664" }
-    - { src: "etc/php/7.0/fpm/pool.d/www.conf.j2", dest: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", owner: "{{ php_vhosts_user }}", group: "www-data", mode: "0664" }
+  with_items: "{{ _php_vhosts_template }}"
   notify: restart php
   tags: hswong3i.php_vhosts
 
@@ -57,8 +54,6 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     state: "{{ item.state }}"
-  with_items:
-  - { src: "/etc/php/5.6/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_base }}/etc/php/5.6/php.ini",  owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", state: "link" }
-  - { src: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_base }}/etc/php/7.0/php.ini",  owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", state: "link" }
+  with_items: "{{ _php_vhosts_link }}"
   notify: restart php
   tags: hswong3i.php_vhosts
