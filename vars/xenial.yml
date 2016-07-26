@@ -1,0 +1,18 @@
+---
+# vars file for hswong3i.php_vhosts (xenial)
+
+_php_vhosts_service: [
+  { name: php7.0-fpm, state: "restarted" },
+]
+_php_vhosts_directory: [
+  { path: "{{ php_vhosts_base }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" },
+  { path: "{{ php_vhosts_base }}/etc/php/7.0", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" },
+  { path: "{{ php_vhosts_session_save_path }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" },
+  { path: "{{ php_vhosts_upload_tmp_dir }}", owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", mode: "0755", state: "directory" },
+]
+_php_vhosts_template: [
+  { src: "etc/php/7.0/fpm/pool.d/www.conf.j2", dest: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", owner: "{{ php_vhosts_user }}", group: "www-data", mode: "0664" },
+]
+_php_vhosts_link: [
+  { src: "/etc/php/7.0/fpm/pool.d/{{ php_vhosts_id }}.conf", path: "{{ php_vhosts_base }}/etc/php/7.0/php.ini",  owner: "{{ php_vhosts_user }}", group: "{{ php_vhosts_user }}", state: "link" },
+]
